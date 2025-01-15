@@ -1,0 +1,19 @@
+#?????? ?? -> ???? 8080
+server:
+  port: 8080
+
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;serverName=LAPTOP-GAM5DPS2;databaseName=reservation_db;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: fujifilm1!
+
+# mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml

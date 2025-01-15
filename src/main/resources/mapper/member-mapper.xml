@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.reservation_spring.member.mapper.MemberMapper">
+
+    <!-- 회원가입 -->
+    <insert id="memberSave" parameterType="com.example.reservation_spring.member.model.Member">
+        INSERT INTO member (name, email, password, phone, adminCheck)
+        VALUES (#{name}, #{email}, #{password}, #{phone}, #{adminCheck})
+    </insert>
+
+</mapper>
+
