@@ -13,10 +13,22 @@
 
 <main>
     <h2>홈 페이지</h2>
-    <p>로그인을 원하시면 아래 링크를 클릭하세요.</p>
-    <a href="./html/login.html">로그인 페이지로 이동</a>
-    <p>회원가입을 원하시면 아래 링크를 클릭하세요.</p>
-    <a href="./html/signup.html">회원가입 페이지로 이동</a>
+
+    <div id="loginLinks">
+        <p>로그인을 원하시면 아래 링크를 클릭하세요.</p>
+        <a href="./html/login.html">로그인 페이지로 이동</a>
+    </div>
+
+    <div id="logoutButton" style="display: none;">
+        <p>로그아웃을 원하시면 아래 버튼을 클릭하세요.</p>
+        <button id="logoutBtn">로그아웃</button>
+    </div>
+
+    <!-- 로그인 상태일 때 회원가입 링크 숨기기 -->
+    <div id="signupLink">
+        <p>회원가입을 원하시면 아래 링크를 클릭하세요.</p>
+        <a href="./html/signup.html">회원가입 페이지로 이동</a>
+    </div>
 </main>
 
 <footer>

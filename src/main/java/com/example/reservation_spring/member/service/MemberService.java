@@ -50,11 +50,6 @@ public class MemberService {
         return new LoginResponseDto("로그인 성공");
     }
 
-    // 세션에서 사용자 정보 가져오기
-    public Member getLoggedInUser(HttpSession session) {
-        return (Member) session.getAttribute("member");
-    }
-
     // 로그아웃
     public void logout(HttpSession session) {
         session.invalidate(); // 세션 무효화
