@@ -15,4 +15,9 @@ public class MemberRepository {
     public void memberSave(Member member) {
         sqlSession.insert("com.example.reservation_spring.member.mapper.MemberMapper.memberSave", member);
     }
+
+    //이메일로 회원 조회
+    public Member findByEmail(String email) {
+        return sqlSession.selectOne("com.example.reservation_spring.member.mapper.MemberMapper.findByEmail", email);
+    }
 }

@@ -9,5 +9,13 @@
         VALUES (#{name}, #{email}, #{password}, #{phone}, #{adminCheck})
     </insert>
 
+    <!-- 로그인(이메일로 회원 조회) -->
+    <select id="findByEmail" parameterType="String" resultType="com.example.reservation_spring.member.model.Member">
+        SELECT id, name, email, password, phone, adminCheck
+        FROM member
+        WHERE email = #{email}
+    </select>
+
+
 </mapper>
 
