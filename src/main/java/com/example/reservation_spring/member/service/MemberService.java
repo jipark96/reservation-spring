@@ -1,18 +1,19 @@
 package com.example.reservation_spring.member.service;
 
-import com.example.reservation_spring.member.dto.JoinRequestDto;
-import com.example.reservation_spring.member.dto.JoinResponseDto;
-import com.example.reservation_spring.member.dto.LoginRequestDto;
-import com.example.reservation_spring.member.dto.LoginResponseDto;
+import com.example.reservation_spring.member.dto.*;
 import com.example.reservation_spring.member.model.Member;
 import com.example.reservation_spring.member.repository.MemberRepository;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -53,5 +54,25 @@ public class MemberService {
     // 로그아웃
     public void logout(HttpSession session) {
         session.invalidate(); // 세션 무효화
+    }
+
+    //회원조회
+    public List<GetMemberDto> findAllMembers() {
+        return memberRepository.findAllMembers();
+    }
+
+    //회원 상세 조회
+    public GetMemberDto findByIdMember(Long id) {
+        return memberRepository.findByIdMember(id);
+    }
+
+    //회원탈퇴
+    public void memberDelete(Long id) {
+        memberRepository.memberDelete(id);
+    }
+
+    //회원수정
+    public void memberUpdate(PatchMemberDto patchMemberDto ) {
+        memberRepository.memberUpdate(patchMemberDto.toEntity());
     }
 }

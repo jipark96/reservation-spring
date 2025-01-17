@@ -16,6 +16,32 @@
         WHERE email = #{email}
     </select>
 
+    <!-- 회원탈퇴 -->
+    <delete id="memberDelete" parameterType="Long">
+        DELETE FROM member
+        WHERE id = #{id}
+    </delete>
+
+    <!-- 회원 조회 -->
+    <select id="findAllMembers" resultType="com.example.reservation_spring.member.dto.GetMemberDto">
+        SELECT id, name, email, phone
+        FROM member
+        order by id DESC
+    </select>
+
+    <!-- 회원 상세 조회 -->
+    <select id="findByIdMember" parameterType="Long" resultType="com.example.reservation_spring.member.dto.GetMemberDto">
+        SELECT id, name, email, phone
+        FROM member
+        WHERE id = #{id}
+    </select>
+
+    <!-- 회원 수정 -->
+    <update id="memberUpdate" parameterType="com.example.reservation_spring.member.model.Member">
+        UPDATE member
+        SET name = #{name}, email = #{email}, password = #{password}, phone = #{phone}
+        WHERE id = #{id}
+    </update>
 
 </mapper>
 
