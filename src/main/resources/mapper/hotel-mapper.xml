@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.reservation_spring.hotel.mapper.HotelMapper">
+    
+    <!-- 글(호텔) 작성 -->
+    <insert id="createHotel" parameterType="com.example.reservation_spring.hotel.model.Hotel">
+        INSERT INTO hotel (title, hotel_name, price, capacity, description, address, date, is_reserved, image_url, business_id)
+        VALUES (#{title}, #{hotelName}, #{price}, #{capacity}, #{description}, #{address}, #{date}, #{isReserved}, #{imageUrl}, #{businessId})
+    </insert>
+    
+</mapper>

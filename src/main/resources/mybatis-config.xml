@@ -6,5 +6,6 @@
         <!--클래스 alias가 들어갈 공간-->
         <typeAlias type="com.example.reservation_spring.member.model.Member" alias="member"></typeAlias>
         <typeAlias type="com.example.reservation_spring.business.model.Business" alias="business"></typeAlias>
+        <typeAlias type="com.example.reservation_spring.hotel.model.Hotel" alias="hotel"></typeAlias>
     </typeAliases>
 </configuration>
